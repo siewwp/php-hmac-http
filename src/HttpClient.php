@@ -61,19 +61,15 @@ class HttpClient extends \GuzzleHttp\Client implements HttpClientContract
      * @param $method
      * @param string $path
      * @param array $options
-     * @return array
-     * @throws \Exception
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     * @throws UndefinedKeyException
      */
-    public function request($method, $path = '', array $options = [])
+    public function requestAsync($method, $path = '', array $options = [])
     {
         if (is_null($this->key)) {
             throw new UndefinedKeyException;
         }
         
-        return retry($this->retry, function () use ($method, $path, $options) {
-            $response = parent::request($method, $path, $options);
-
-            return json_decode((string)$response->getBody(), true);
-        }, 1000);
+        return parent::requestAsync($method, $path, $options);
     }
 }

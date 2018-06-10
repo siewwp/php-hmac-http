@@ -11,6 +11,4 @@ interface HttpClient extends ClientInterface
     public function pushMiddleware(callable $middleware);
 
     public function setKey(KeyInterface $key);
-
-    public function request($method, $path = '', array $options = []);
 }
