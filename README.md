@@ -7,7 +7,7 @@ Providing the key on constructor
 ```
 $key = Acquia\Hmac\Key($appId, $appSecret);
 
-$client = new \Siewwp\HmacHttp\Client($options, $key);
+$client = new \Siewwp\HmacHttp\HttpClient($options, $key);
 
 // your usual guzzle stuff
 ```
@@ -15,7 +15,7 @@ $client = new \Siewwp\HmacHttp\Client($options, $key);
 Providing the key using key setter
 
 ```
-$client = new \Siewwp\HmacHttp\Client($options, $key);
+$client = new \Siewwp\HmacHttp\HttpClient($options, $key);
 
 $key = Acquia\Hmac\Key($appId, $appSecret);
 
