@@ -1,0 +1,11 @@
+/vendor
+/.idea
+/.vscode
+/.vagrant
+composer.lock
+.env
+_ide_helper.php
+_ide_helper_models.php
+.phpstorm.meta.php
+.DS_Store
+._*

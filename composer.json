@@ -1,0 +1,21 @@
+{
+    "name": "siewwp/php-hmac-http",
+    "description": "Guzzle http client with hmac authentication middleware",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "WP Siew",
+            "email": "siewwp.and@gmail.com"
+        }
+    ],
+    "require": {
+        "acquia/http-hmac-php": "^4.0",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Siewwp\\HmacHttp\\": "src/"
+        }
+    }
+}
