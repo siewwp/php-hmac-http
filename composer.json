@@ -17,5 +17,6 @@
         "psr-4": {
             "Siewwp\\HmacHttp\\": "src/"
         }
-    }
+    },
+    "minimum-stability": "dev"
 }
