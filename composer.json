@@ -18,5 +18,6 @@
             "Siewwp\\HmacHttp\\": "src/"
         }
     },
+    "prefer-stable": true,
     "minimum-stability": "dev"
 }
