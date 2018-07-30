@@ -5,7 +5,6 @@ namespace Siewwp\HmacHttp;
 
 use Siewwp\HmacHttp\Exceptions\UndefinedKeyException;
 use Siewwp\HmacHttp\Contracts\HttpClient as HttpClientContract;
-use Acquia\Hmac\Guzzle\HmacAuthMiddleware;
 use Acquia\Hmac\KeyInterface;
 use GuzzleHttp\HandlerStack;
 
