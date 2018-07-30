@@ -3,6 +3,7 @@
 
 namespace Siewwp\HmacHttp;
 
+use GuzzleHttp\Exception\RequestException;
 use Siewwp\HmacHttp\Exceptions\UndefinedKeyException;
 use Siewwp\HmacHttp\Contracts\HttpClient as HttpClientContract;
 use Acquia\Hmac\KeyInterface;
@@ -69,6 +70,19 @@ class HttpClient extends \GuzzleHttp\Client implements HttpClientContract
             throw new UndefinedKeyException;
         }
         
-        return parent::requestAsync($method, $path, $options);
+        return parent::requestAsync($method, $path, $options)
+            ->then(
+                null,
+                function ($exception) {
+                    if ($exception instanceof RequestException) {
+                        throw new RequestException(
+                            $exception->getResponse()->getBody(),
+                            $exception->getRequest(),
+                            $exception->getResponse()
+                        );
+                    }
+                    throw $exception;
+                }
+            );
     }
 }
